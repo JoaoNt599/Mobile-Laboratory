@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-button  name="reorder-three-outline" routerLink="/home" color="secondary">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
+      <ion-title>Solar Events (Donki)</ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="donkiData.length > 0">
+  <ion-list>
+    <ion-item *ngFor="let event of donkiData">
+      <ion-label>
+        <h2>{{ event.beginTime | date }}</h2>
+        <p>Type: {{ event.classType }}</p>
+        <p *ngIf="event.magnitude">Magnitude: {{ event.magnitude }}</p>
+        <p *ngIf="!event.magnitude">Magnitude not available</p>
+      </ion-label>
+      <!-- <pre>{{ event | json }}</pre> -->
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-content *ngIf="donkiData.length === 0">
+  <p>No solar events found on the selected dates.</p>
+</ion-content>
+
+<ion-footer>
+  <!-- Ion-tab-button snippet -->
+  <ion-tab-bar>
+    <ion-tab-button>
+      <ion-icon name="library-outline"></ion-icon>
+      <span class="button-is-selected">Curiosities</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="newspaper-outline"></ion-icon>
+      <span>Newsletter</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="server-outline" routerLink="/home"></ion-icon>
+      <span>APIs</span>
+    </ion-tab-button>
+    </ion-tab-bar>
+  <!-- End of ion-tab-button snippet -->
+  </ion-footer>

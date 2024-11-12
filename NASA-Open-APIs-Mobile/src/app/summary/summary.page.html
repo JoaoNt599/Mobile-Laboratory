@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon name="planet"></ion-icon>
+      <ion-icon name="logo"></ion-icon>
+        NASA Open APIs
+      <ion-icon name="logo"></ion-icon>
+      <ion-icon name="telescope-outline"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-textarea [(ngModel)]="articleText" placeholder="Paste"></ion-textarea>
+  </ion-item>
+  <ion-button expand="full" (click)="generateSummary()">Resume Generate</ion-button>
+
+  <ion-card *ngIf="summary">
+    <ion-card-header>
+      <ion-card-title>Resume</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ summary }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <!-- Ion-tab-button snippet -->
+  <ion-tab-bar>
+    <ion-tab-button>
+      <ion-icon name="radio-outline" routerLink="/live-stream"></ion-icon>
+      <span class="button-is-selected">Live Stream</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="newspaper-outline"></ion-icon>
+      <span>Newsletter</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="server-outline" routerLink="/home"></ion-icon>
+      <span>APIs</span>
+    </ion-tab-button>
+    </ion-tab-bar>
+  <!-- End of ion-tab-button snippet -->
+  </ion-footer>

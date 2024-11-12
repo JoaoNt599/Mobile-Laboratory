@@ -1,0 +1,29 @@
+ion-header {
+  text-align: center;
+}
+
+ion-item {
+
+  ion-icon {
+    justify-content: space-between;
+    margin-left: 26px;
+  }
+}
+
+.ion-padding {
+  display: flex;
+  flex-direction: column;
+}
+
+--ion-button {
+  color: red($color: #000000);
+}
+
+ion-menu-button {
+  margin-left: 10px; 
+}
+
+// ion-button {
+//   font-size: 1.2em; 
+// }
+

@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="end">
+      <ion-button (click)="presentPopover($event)">
+        <ion-icon name="ellipsis-vertical" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      TASKS TO DO
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-segment [(ngModel)]="type" color="success">
+    <ion-segment-button value="pending" layout="icon-start">
+      <ion-icon name="alert-circle"></ion-icon>
+      <ion-label>Pending</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="done" layout="icon-start">
+      <ion-icon name="checkmark-circle"></ion-icon>
+      <ion-label>Completed</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list *ngIf="type == 'pending'">
+    <ion-item-sliding *ngFor="let task of tasks | async; let i = index">
+      <ion-item *ngIf="!task.done" >
+        <ion-label>{{task.value}}</ion-label>
+        <ion-checkbox slot="start" (ionChange)="taskService.updateTaskDone(task.id, task)"></ion-checkbox>
+        <ion-badge color="success" *ngIf="task.date">
+          {{ task.date.toDate() | date: 'dd/MM/yyyy' }}
+        </ion-badge>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="success" (click)="presentAlertPromptUpdate(task.id, task)">
+          <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger" (click)="presentAlertPromptDel(task.id)">
+          <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list *ngIf="type == 'done'">
+    <ion-item-sliding *ngFor="let task of tasks | async; let i = index">
+      <ion-item *ngIf="task.done">
+        <ion-label>{{task.value}}</ion-label>
+        <ion-checkbox slot="start" checked="true" (ionChange)="taskService.updateTaskDone(task.id, task)" color="success"></ion-checkbox>
+        <ion-badge color="success" *ngIf="task.date">
+          {{ task.date.toDate() | date: 'dd/MM/yyyy' }}
+        </ion-badge>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="success" (click)="presentAlertPromptUpdate(task.id, task)">
+          <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger" (click)="presentAlertPromptDel(task.id)">
+          <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="presentAlertPromptAdd()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

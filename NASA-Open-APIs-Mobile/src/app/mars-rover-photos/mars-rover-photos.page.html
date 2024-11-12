@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-button  name="reorder-three-outline" routerLink="/home" color="secondary">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
+      <ion-title>Mars Rover Photos</ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Pagination buttons -->
+  <div class="pagination">
+    <ion-button *ngFor="let page of [].constructor(totalPages); let i = index" 
+                (click)="changePage(i + 1)" 
+                [color]="(i + 1) === currentPage ? 'primary' : 'light'">
+      {{ i + 1 }}
+    </ion-button>
+  </div>
+
+  <ion-content *ngIf="photos.length > 0">
+    <ion-card *ngFor="let photo of photos">
+      <ion-img [src]="photo.img_src" *ngIf="photo.img_src"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{ photo.camera.full_name }}</ion-card-title>
+        <p>Rover: {{ photo.rover.name }} - {{ photo.earth_date }}</p>
+      </ion-card-header>
+    </ion-card>
+  </ion-content>
+  
+  <ng-template *ngIf="photos.length == 0">
+    <p>No photos available</p>
+  </ng-template>
+
+</ion-content>
+
+
+<ion-footer>
+  <!-- Ion-tab-button snippet -->
+  <ion-tab-bar>
+    <ion-tab-button>
+      <ion-icon name="library-outline"></ion-icon>
+      <span class="button-is-selected">Curiosities</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="newspaper-outline"></ion-icon>
+      <span>Newsletter</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="server-outline" routerLink="/home"></ion-icon>
+      <span>APIs</span>
+    </ion-tab-button>
+    </ion-tab-bar>
+  <!-- End of ion-tab-button snippet -->
+  </ion-footer>

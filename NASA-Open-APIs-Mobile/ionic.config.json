@@ -1,0 +1,12 @@
+{
+  "name": "Astronomy",
+  "integrations": {
+    "capacitor": {}},
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://api.nasa.gov"
+    }
+  ]
+}

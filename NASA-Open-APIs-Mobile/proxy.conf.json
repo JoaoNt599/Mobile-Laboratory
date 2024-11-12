@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "https://eonet.sci.gsfc.nasa.gov",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+  

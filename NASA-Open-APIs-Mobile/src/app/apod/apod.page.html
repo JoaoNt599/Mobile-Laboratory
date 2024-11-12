@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-buttons>
+        <ion-button  name="reorder-three-outline" routerLink="/home" color="secondary">
+          <ion-icon name="chevron-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Astronomy Picture of the Day</ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="apodData">
+  <ion-card>
+    <img [src]="apodData.url" *ngIf="apodData.url" />
+    <ion-card-header>
+      <ion-card-title>{{ apodData.title }}</ion-card-title>
+      <p>{{ apodData.date }}</p>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ apodData.explanation }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <!-- Ion-tab-button snippet -->
+  <ion-tab-bar>
+    <ion-tab-button>
+      <ion-icon name="radio-outline" routerLink="/live-stream"></ion-icon>
+      <span class="button-is-selected">Live Stream</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="newspaper-outline"></ion-icon>
+      <span>Newsletter</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="server-outline"></ion-icon>
+      <span>APIs</span>
+    </ion-tab-button>
+    </ion-tab-bar>
+  <!-- End of ion-tab-button snippet -->
+</ion-footer>

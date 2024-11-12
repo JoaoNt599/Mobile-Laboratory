@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-button  name="reorder-three-outline" routerLink="/home" color="secondary">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
+      <ion-title>The Earth Observatory Natural Event Tracker (EONET)</ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="eonetEvents.length > 0; else noEvents">
+    <ion-item *ngFor="let event of eonetEvents">
+      <ion-label>
+        <h2>{{ event.title }}</h2>
+        <p>{{ event.description }}</p>
+        <p><strong>Date:</strong> {{ event.startDate | date }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ng-template #noEvents>
+    <div>
+      <h1>Resource temporarily unavailable</h1>
+    </div>
+    <ion-label>{{ errorMessage || 'No events available' }}</ion-label>
+  </ng-template>
+</ion-content>
+
+<ion-footer>
+  <!-- Ion-tab-button snippet -->
+  <ion-tab-bar>
+    <ion-tab-button>
+      <ion-icon name="library-outline"></ion-icon>
+      <span class="button-is-selected">Curiosities</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="newspaper-outline"></ion-icon>
+      <span>Newsletter</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="server-outline" routerLink="/home"></ion-icon>
+      <span>APIs</span>
+    </ion-tab-button>
+    </ion-tab-bar>
+  <!-- End of ion-tab-button snippet -->
+  </ion-footer>

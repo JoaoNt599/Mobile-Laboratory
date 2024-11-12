@@ -1,0 +1,843 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon name="planet"></ion-icon>
+      <ion-icon name="logo"></ion-icon>
+        NASA Open APIs
+      <ion-icon name="logo"></ion-icon>
+      <ion-icon name="telescope-outline"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+
+  <!--APOD-->
+  <ion-item>
+    <ion-buttons>
+    <ion-button name="reorder-three-outline" routerLink="/apod"  class="text-label"> 
+      APOD: View Atronomy Picture of...
+    </ion-button>
+    </ion-buttons>
+
+    <ion-buttons>
+    <ion-button id="open-apod-modal" expand="block">
+      <b class="text-info">Info</b>
+      <ion-icon name="information-circle-outline"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+
+    <!-- <ion-icon name="analytics-outline"></ion-icon> -->
+
+    <ion-modal #modal trigger="open-apod-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>APOD: Astronomy Picture of the Day</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissApodModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          APOD: Astronomy Picture of the Day
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              One of the most popular websites at NASA is the Astronomy Picture of the Day. 
+              In fact, this website is one of the most popular websites across all federal agencies. 
+              It has the popular appeal of a Justin Bieber video. 
+              This endpoint structures the APOD imagery and associated metadata so that it can be repurposed for other applications. 
+              In addition, if the concept_tags parameter is set to True, then keywords derived from the image explanation are returned. 
+              These keywords could be used as auto-generated hashtags for twitter or instagram feeds; but generally help with discoverability of relevant imagery.
+              The full documentation for this API can be found in the APOD API Github repository.
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--APOD-->
+
+  <!--NeoWs-->
+  <ion-item>
+    <ion-buttons>
+    <ion-button name="reorder-three-outline" routerLink="/asteroids" class="text-label"> 
+      NeoWs: See Near-Earth Asteroid...
+    </ion-button>
+    </ion-buttons>
+
+    <ion-buttons>
+    <ion-button id="open-neows-modal" expand="block">
+      <b class="text-info">Info</b>
+      <ion-icon name="information-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+    
+
+    <!-- <ion-icon name="analytics-outline"></ion-icon> -->
+
+    <ion-modal #modal trigger="open-neows-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Asteroids: NeoWs</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissNeowsModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          APOD: Astronomy Picture of the Day
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              NeoWs (Near Earth Object Web Service) is a RESTful web service for near earth Asteroid information. 
+              With NeoWs a user can: search for Asteroids based on their closest approach date to Earth, lookup a specific Asteroid with its NASA JPL small body id, as well as browse the overall data-set.
+              Data-set: All the data is from the NASA JPL Asteroid team (http://neo.jpl.nasa.gov/).
+              This API is maintained by SpaceRocks Team: David Greenfield, Arezu Sarvestani, Jason English and Peter Baunach.
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--NeoWs-->
+
+  <!--DONKI-->
+  <ion-item>
+    <ion-buttons>
+    <ion-button name="reorder-three-outline" routerLink="/donki" class="text-label"> 
+      DONKI: Space Weather Databas...
+    </ion-button>
+  </ion-buttons>
+
+    <ion-buttons>
+    <ion-button id="open-donki-modal" expand="block">
+      <b class="text-info">Info</b>
+      <ion-icon name="information-circle-outline"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+
+    <!-- <ion-ic name="analytics-outline">on></ion-ic -->
+
+    <ion-modal #modal trigger="open-donki-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>DONKI: Space Weather Database Of Notifications, Knowledge, Information</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissDonkiModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          DONKI: Space Weather Database Of Notifications, Knowledge, Information
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              The Space Weather Database Of Notifications, Knowledge, Information (DONKI) is a comprehensive on-line tool for space weather forecasters, scientists, and the general space science community. 
+              DONKI chronicles the daily interpretations of space weather observations, analysis, models, forecasts, and notifications provided by the Space Weather Research Center (SWRC), 
+              comprehensive knowledge-base search functionality to support anomaly resolution and space science research, intelligent linkages, relationships, cause-and-effects between space weather 
+              activities and comprehensive webservice API access to information stored in DONKI. 
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--DONKI-->
+  
+  <!--EARTH-->
+  <ion-item>
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/earth" class="text-label"> 
+        Earth: Unlock the significant publi...
+      </ion-button>
+    </ion-buttons>
+   
+    <ion-buttons>
+      <ion-button id="open-earth-modal" expand="block">
+        <b class="text-info">Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+
+    <!-- <ion-icon name="analytics-outline"></ion-icon> -->
+
+    <ion-modal #modal trigger="open-earth-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title> Earth: Unlock the significant public investment in earth observation data</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissEarthModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          Earth: Unlock the significant public investment in earth observation data
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              Landsat imagery is provided to the public as a joint project between NASA and USGS.
+              A recent industry report on landsat satellite imagery data estimates that total annual value to the economy of $2.19 billion, far exceeding the multi-year total cost of building, launching, and managing Landsat satellites and sensors. 
+              The value is derived from consumers use of the data.
+              The objective of this endpoint is to give you an easy to use taste of what Landsat imagery data can provide. 
+              There are more complicated APIs available if you want to build models on top of satellite imagery, apply machine-learning, or minimize clouds in your image. 
+              NASA's Earth Science Devision has a variety of Earth imagery APIs for developers, which you can find out about in the Earthdata Developer Portal. 
+              Specifically, the GIBS (Global Imagery Browse Services) API may be of interest. The Google Earth Engine API is another powerful option. 
+              This API is powered by Google Earth Engine API, and currently only supports pan-sharpened Landsat 8 imagery. 
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--EARTH-->
+  
+  <!--EONET-->
+  <ion-item>
+
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/eonet" class="text-label"> 
+        EONET: The Earth Observatory Natura...
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons>
+      <ion-button id="open-eonet-modal" expand="block">
+        <b class="text-info">Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+ 
+    <ion-modal #modal trigger="open-eonet-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.90]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title> EONET: The Earth Observatory Natural Event Tracker</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissEonetModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          EONET: The Earth Observatory Natural Event Tracker
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              More and more NASA imagery is being made available via web services (WMS, WMTS, etc.) and a significant percentage of it is being produced and published in near real time (NRT=within a few hours after acquisition). 
+              This ability means that NASA imagery can be used more routinely to examine current natural events as they happen.
+              Using client applications, such as NASA EOSDIS’ Worldview, users can browse the entire globe daily and look for natural events as they occur. 
+              Storms are regularly spotted in the tropics, dust storms over deserts, forest fires in the summers. 
+              These events are occurring constantly and NASA NRT imagery can represent them all using a variety of different data parameters. However, the user’s experience is tailored, and therefore restricted, by the client application. 
+              What if there was an API that provided a curated list of natural events and provided a way to link those events to event-related NRT image layers? Enter EONET.
+              The Earth Observatory Natural Event Tracker (EONET) is a prototype web service with the goal of:
+              providing a curated source of continuously updated natural event metadata; providing a service that links those natural events to thematically-related web service-enabled image sources (e.g., via WMS, WMTS, etc.).
+              Please see our API documentation to learn more about how to use the EONET web services.
+              Development of EONET began in 2015 and has been supported by NASA’s Earth Observatory and Earth Science Data and Information System (ESDIS) Project. 
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--EONET-->
+
+  <!--EPIC-->
+  <ion-item>
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/epic"> 
+        EPIC: Earth Polychromatic Imaging... 
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-button id="open-epic-modal" expand="block">
+        <b>Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-modal #modal trigger="open-epic-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>EPIC: Earth Polychromatic Imaging Camera </ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissEpicModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          EPIC: Earth Polychromatic Imaging Camera 
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              The EPIC API provides information on the daily imagery collected by DSCOVR's Earth Polychromatic Imaging Camera (EPIC) instrument. 
+              Uniquely positioned at the Earth-Sun Lagrange point, EPIC provides full disc imagery of the Earth and captures unique perspectives of certain astronomical events such as lunar transits using a 2048x2048 pixel CCD (Charge Coupled Device) 
+              detector coupled to a 30-cm aperture Cassegrain telescope.
+              Image metadata and key information are provided by the JSON API and can be requested by date and for the most recent available date. 
+              A listing of all available dates can also be retrieved via the API for more granular control.
+              Development of the EPIC API began in 2015, and is supported by the web development team for the Laboratory for Atmospheres in the Earth Sciences Division of the Goddard Space Flight Center. 
+              More information regarding the API and retrieval of the imagery for download can be found on the EPIC website. 
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--EPIC-->
+
+
+  <!--EXOPLANET-->
+  <ion-item>
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/exoplanet"> 
+        Exoplanet: Programmatic access to...
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-button id="open-exoplanet-modal" expand="block">
+        <b>Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-modal #modal trigger="open-exoplanet-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Programmatic access to NASA's Exoplanet Archive databse</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissExoplanetModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          Programmatic access to NASA's Exoplanet Archive databse
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              The Exoplanet Archive API allows programatic access to NASA's Exoplanet Archive database. 
+              This API contains a ton of options so to get started please visit this page for introductory materials. 
+              To see what data is available in this API visit here and also be sure to check out best-practices and troubleshooting in case you get stuck. 
+              Happy planet hunting!  
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--EXOPLANET-->
+
+  <!--OSDR-->
+  <ion-item>
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/osdr"> 
+        Open Science Data Repository Public...
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-button id="open-osdr-modal" expand="block">
+        <b>Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-modal #modal trigger="open-osdr-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Open Science Data Repository Public API</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissOsdrModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          Open Science Data Repository Public API
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              NASA OSDR provides a RESTful Application Programming Interface (API) to its full-text search, data file retrieval, and metadata retrieval capabilities. 
+              The API provides a choice of standard web output formats, either JavaScript Object Notation (JSON) or Hyper Text Markup Language (HTML), of query results. 
+              The Data File API returns metadata on data files associated with dataset(s), including the location of these files for download via https. 
+              The Metadata API returns entire sets of metadata for input study dataset accession numbers. 
+              The Search API can be used to search dataset metadata by keywords and/or metadata. 
+              It can also be used to provide search of three other omics databases: the National Institutes of Health (NIH) / National Center for Biotechnology Information's (NCBI) 
+              Gene Expression Omnibus (GEO); the European Bioinformatics Institute's (EBI) Proteomics Identification (PRIDE); the Argonne National Laboratory's (ANL) Metagenomics Rapid Annotations using Subsystems Technology (MG-RAST).
+              In addition to study datasets, NASA OSDR also hosts metadata for 7 other data types: experiments, payloads, subjects, biospecimens, missions, vehicles, and hardware. 
+              The API for these data types is listed separately and uniform throughout, to make for easy metadata exploration.  
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--OSDR-->
+
+  <!--INSIGHT-->
+  <ion-item>
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/mars-weather"> 
+        InSight: Mars Weather Service API
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-button id="open-insight-modal" expand="block">
+        <b>Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-modal #modal trigger="open-insight-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>InSight: Mars Weather Service API</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissInsightModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          InSight: Mars Weather Service API
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              THIS SERVICE HAS SIGNIFICANT MISSING DATA DUE TO INSIGHT NEEDING TO MANAGE POWER USE:Please check out the seasonal weather report plot for an illustration of missing data and read this article about how dust and distance from the sun affect Insight's power situation.
+              NASA’s InSight Mars lander takes continuous weather measurements (temperature, wind, pressure) on the surface of Mars at Elysium Planitia, a flat, smooth plain near Mars’ equator. 
+              Please note that there are sometimes problems with the sensors on Mars that result in missing data! If you see a long gap, a search result may bring up more information on whether it is a long-lasting problem. 
+              Summaries of these data are available at https://mars.nasa.gov/insight/weather/.
+              This API provides per-Sol summary data for each of the last seven available Sols (Martian Days).
+              As more data from a particular Sol are downlinked from the spacecraft (sometimes several days later), these values are recalculated, and consequently may change as more data are received on Earth. 
+              Additionally, please note that wind and other sensor data may not exist for certain date ranges. 
+              You can check out https://mars.nasa.gov/insight/weather/ and scroll down to the 'seasonal weather report' you'll see the gaps where no data exists for some sensors.  
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--INSIGHT-->
+
+  <!--MRP-->
+  <ion-item>
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/mars-rover-photos"> 
+        Mars Rover Photos: Image data...
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-button id="open-mrp-modal" expand="block">
+        <b>Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-modal #modal trigger="open-mrp-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Mars Rover Photos: Image data gathered by NASA's Curisity, Opportunity, and Sprit rovers on Mars.</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissMrpModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          Mars Rover Photos: Image data gathered by NASA's Curisity, Opportunity, and Sprit rovers on Mars.
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              This API is designed to collect image data gathered by NASA's Curiosity, Opportunity, and Spirit rovers on Mars and make it more easily available to other developers, educators, and citizen scientists. 
+              This API is maintained by Chris Cerami.
+              Each rover has its own set of photos stored in the database, which can be queried separately. 
+              There are several possible queries that can be made against the API. 
+              Photos are organized by the sol (Martian rotation or day) on which they were taken, counting up from the rover's landing date. A photo taken on Curiosity's 1000th Martian sol exploring Mars, for example, will have a sol attribute of 1000. 
+              If instead you prefer to search by the Earth date on which a photo was taken, you can do that, too.
+              Along with querying by date, results can also be filtered by the camera with which it was taken and responses will be limited to 25 photos per call. 
+              Queries that should return more than 25 photos will be split onto several pages, which can be accessed by adding a 'page' param to the query.   
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--MRP-->
+  
+  <!--NIVL-->
+  <ion-item>
+    
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/nasa-image"> 
+        NASA Image and Video Library API...
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-button id="open-nivl-modal" expand="block">
+        <b>Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+ 
+    <ion-modal #modal trigger="open-nivl-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>NASA Image and Video Library</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissNivlModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          NASA Image and Video Library
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              Use this API to access the NASA Image and Video Library site at images.nasa.gov. For the latest documentation, please go here.
+              The images.nasa.gov API is organized around REST, has predictable/resource­-oriented URLs and uses HTTP response codes to indicate API errors. 
+              This API uses built-­in HTTP features such as HTTP authentication and HTTP verbs, which are understood by many off-­the-­shelf HTTP clients. 
+              Please note that JSON is returned by all API responses, including errors. 
+              Each of the endpoints described below also contains example snippets which use the curl command­-line tool, Unix pipelines, and the python command­-line tool to output API responses in an easy­ to ­read format.    
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--NIVL-->
+
+  <!--TT-->
+  <ion-item>
+
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/home"> 
+        TechTransfer NASA's Technology...
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-button id="open-tt-modal" expand="block">
+        <b>Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-modal #modal trigger="open-tt-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>TechTransfer</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissTtModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          NASA's Technology Transfer Program
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              NASA's Technology Transfer Program ensures that innovations developed for exploration and discovery are broadly available to the public. 
+              The NASA patent portfolio is available to benefit US citizens. 
+              Through partnerships and licensing agreements with industry, these patents ensure that NASA’s investments in pioneering research find secondary uses that benefit the economy, create jobs, and improve quality of life. 
+              This endpoint provides structured, searchable developer access to NASA’s patents, software, and technology spinoff descriptions that have been curated to support technology transfer. 
+              More information can be found at technology.nasa.gov and software.nasa.gov and spinoff.nasa.gov.    
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--TT--> 
+
+  <!--SSC-->
+  <ion-item>
+
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/home" class="text-label"> 
+        Satellite Situation Center: System to...
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons>
+      <ion-button id="open-ssc-modal" expand="block">
+        <b class="text-in">Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-modal #modal trigger="open-ssc-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Satellite Situation Center</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissSscModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          Satellite Situation Center Web (SSCWeb) service
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              The Satellite Situation Center Web (SSCWeb) service has been developed and is operated jointly by the NASA/GSFC Space Physics Data Facility (SPDF) and the National Space Science Data Center (NSSDC) to support a range of NASA science programs and to fulfill key international NASA responsibilities including those of NSSDC and the World Data Center-A for Rockets and Satellites. 
+              The software and associated database of SSCWeb together form a system to cast geocentric spacecraft location information into a framework of (empirical) geophysical regions and mappings of spacecraft locations along lines of the Earth's magnetic field. 
+              This capability is one key to mission science planning (both single missions and coordinated observations of multiple spacecraft with ground-based investigations) and to subsequent multi-mission data analysis. 
+              To get started with this API please visit this page.    
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--SSC-->
+
+  <!--SSD/CNEOS-->
+  <ion-item>
+
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/home" class="text-label"> 
+        Center for Near-Earth Object Studies...
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons>
+      <ion-button id="open-ssd-modal" expand="block">
+        <b class="text-info">Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-modal #modal trigger="open-ssd-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title> Center for Near-Earth Object Studies...</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissSsdModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          SSD/CNEOS: Center for Near-Earth Object Studies
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              Welcome to JPL’s SSD (Solar System Dynamics) and CNEOS (Center for Near-Earth Object Studies) API (Application Program Interface) service. 
+              This service provides an interface to machine-readable data (JSON-format) related to SSD and CNEOS.
+              If you are looking for human-readable data, please go to the main websites for SSD and/or CNEOS. 
+              For further information on this API and its component services...   
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--SSD/CNEOS-->
+
+  <!--Techport-->
+  <ion-item>
+
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/home" class="text-label"> 
+        TechPort is NASA’s technology's ...
+      </ion-button>
+    </ion-buttons>
+    
+  <ion-buttons>
+    <ion-button id="open-techport-modal" expand="block">
+      <b class="text-info">Info</b>
+      <ion-icon name="information-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+    <ion-modal #modal trigger="open-techport-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Techport TechPort is NASA’s technology</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissTechportModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          TechPort is NASA’s technology
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              TechPort is NASA’s technology inventory, showcasing the NASA portfolio of active and completed technology projects. 
+              TechPort makes available technology information from across the Agency in order to facilitate opportunities for collaboration and partnerships, analyses of how the Agency is meeting mission needs, and data visualizations of technology drivers that enable key decisions.
+              The NASA TechPort system provides a RESTful web services API to make technology project data available to other systems and services. 
+              This API can be used to export TechPort data into JSON format, which can be further processed and analyzed.
+              For complete API documentation please visit the TechPort website.    
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--Techport-->
+
+  <!--Tle api-->
+  <ion-item>
+
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/home" class="text-label"> 
+        TLE API - Two Line Element set record...
+      </ion-button>
+    </ion-buttons>
+   
+    <ion-buttons>
+      <ion-button id="open-tleapi-modal" expand="block">
+        <b class="text-info">Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-modal #modal trigger="open-tleapi-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>TLE API</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissTleapiModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          TechPort is NASA’s technology
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              The TLE API provides up to date two line element set records, the data is updated daily from CelesTrak and served in JSON format. 
+              A two-line element set (TLE) is a data format encoding a list of orbital elements of an Earth-orbiting object for a given point in time. 
+              For more information on TLE data format visit Definition of Two-line Element Set Coordinate System.
+              Further documentation and response examples are available at: http://tle.ivanstanojevic.me   
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--Tle api-->
+
+  <!--WMTS-->
+  <ion-item>
+    <ion-buttons>
+      <ion-button name="reorder-three-outline" routerLink="/home" class="text-label"> 
+        Vesta/Moon/Mars Trek WMTS - A Web Map...
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-button id="open-wmts-modal" expand="block">
+        <b class="text-info">Info</b>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-modal #modal trigger="open-wmts-modal" [presentingElement]="presentingElement" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Vesta/Moon/Mars</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="dismissWmtsModal()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-item>
+          Vesta/Moon/Mars Trek WMTS
+        </ion-item>
+        <ion-content>
+          <ion-item>
+            <p>
+              Here we have the collection of APIs that power the awesome Mars Trek and Vesta Trek NASA web-based portals for exploration and have newly added Moon Trek. 
+              These APIs can be leveraged using your favorite OGC RESTFul Web Map and Tile Service (WMTS) client. 
+              Please visit http://www.opengeospatial.org/standards/wmts for more information about WMTS. 
+              To help you get started, we've included some demos using the ESRI javascript client library for Mars and Vesta.
+              This API is maintained and provided by the NASA Solar System Exploration Research Virtual Institute (SSERVI) and the Jet Propulsion Lab (JPL) Trek team.
+              
+              Available Moon Mosaics
+      
+              Here is basic information about how to request image tiles from a RESTful WMTS service. The basic URL template is as follows:
+              
+              ...
+
+              * Some services are .png and some are .jpg. Please look at WMTS GetCapabilities ResourcesURL element to find out what extension to use. 
+              In order to fill in the variables in the template URL, you need to parse the WMTS GetCapabilities XML. 
+              GetCapabilities XML can be found for each product below. From the WMTS GetCapabilities XML, find ows:Identifier element inside Style element. 
+              Inside the TileMatrixSet element in WMTS Capabilities, there is a list of TileMatrix. This is the Zoom level.  
+              The first zoom level for a product that covers the entire globe will have two columns and one row so that the URLs are as follows:
+              
+              http://moontrek.jpl.nasa.gov/trektiles/Moon/EQ/LRO_WAC_Mosaic_Global_303ppd_v02/1.0.0/default/default028mm/0/0/0.jpg
+              http://moontrek.jpl.nasa.gov/trektiles/Moon/EQ/LRO_WAC_Mosaic_Global_303ppd_v02/1.0.0/default/default028mm/0/0/1.jpg
+              
+              The second zoom level has four columns and two rows and so on. If the image tile is missing, that means there is no data coverage in that area. 
+              You can also use coverage Bbox to calculate the coverage before requesting image tiles.
+              
+              For a complete listing of the Moon's Equirectangular, North Polar and South Polar based Services, please see https://trek.nasa.gov/tiles/apidoc/trekAPI.html?body=moon 
+            </p>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-item>
+  <!--WMTS-->
+  </div>
+</ion-content>
+
+<ion-footer>
+  <!-- Ion-tab-button snippet -->
+  <ion-tab-bar>
+    <ion-tab-button>
+      <ion-icon name="radio-outline" routerLink="/live-stream"></ion-icon>
+      <span class="button-is-selected">Live Stream</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="newspaper-outline" routerLink="/summary"></ion-icon>
+      <span>Newsletter</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="server-outline" routerLink="/home"></ion-icon>
+      <span>APIs</span>
+    </ion-tab-button>
+    </ion-tab-bar>
+  <!-- End of ion-tab-button snippet -->
+  </ion-footer>

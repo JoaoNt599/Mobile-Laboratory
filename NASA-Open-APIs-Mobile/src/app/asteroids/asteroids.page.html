@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-button  name="reorder-three-outline" routerLink="/home" color="secondary">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
+      <ion-title>Asteroids NeoWs: Near Eath Object Web Service</ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="datesArray.length > 0">
+  <ng-container *ngTemplateOutlet="dateTemplate; context: { $implicit: datesArray }"></ng-container>
+
+  <ng-template #dateTemplate let-dates>
+    <ion-list>
+      <ion-item *ngFor="let date of dates">
+        <ion-label>
+          <h2>{{ date.date }}</h2>
+          <ion-list>
+            <ion-item *ngFor="let asteroid of date.asteroids">
+              <ion-label>
+                <h3>{{ asteroid.name }}</h3>
+                <p>Diameter: {{ asteroid.estimated_diameter.kilometers.estimated_diameter_max }} km</p>
+                <p>Speed: {{ asteroid.close_approach_data[0].relative_velocity.kilometers_per_hour }} km/h</p>
+                <p>Distance from Earth: {{ asteroid.close_approach_data[0].miss_distance.kilometers }} km</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+</ion-content>
+
+<ion-footer>
+  <!-- Ion-tab-button snippet -->
+  <ion-tab-bar>
+    <ion-tab-button>
+      <ion-icon name="library-outline"></ion-icon>
+      <span class="button-is-selected">Curiosities</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="newspaper-outline"></ion-icon>
+      <span>Newsletter</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="server-outline" routerLink="/home"></ion-icon>
+      <span>APIs</span>
+    </ion-tab-button>
+    </ion-tab-bar>
+  <!-- End of ion-tab-button snippet -->
+  </ion-footer>

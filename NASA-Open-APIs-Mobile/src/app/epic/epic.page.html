@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-button  name="reorder-three-outline" routerLink="/home" color="secondary">
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
+      <ion-title>NASA EPIC Images</ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let image of epicImages">
+        <ion-card *ngFor="let image of epicImages">
+          <img [src]="getEpicImageUrl(image.image, image.date)" alt="EPIC Image" />
+          <ion-card-content>
+            <p>{{ image.date }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <!-- Ion-tab-button snippet -->
+  <ion-tab-bar>
+    <ion-tab-button>
+      <ion-icon name="library-outline"></ion-icon>
+      <span class="button-is-selected">Curiosities</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="newspaper-outline"></ion-icon>
+      <span>Newsletter</span>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="server-outline" routerLink="/home"></ion-icon>
+      <span>APIs</span>
+    </ion-tab-button>
+    </ion-tab-bar>
+  <!-- End of ion-tab-button snippet -->
+  </ion-footer>
